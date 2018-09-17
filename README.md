@@ -1,6 +1,6 @@
 # Cardano Wallet/Node - Docker
 
-This project will build a 1.3.x Cardano Node and Wallet running within a docker container on Ubuntu. This repo was forked from [here](https://github.com/TheDevKnight/cardano-sl-wallet) and thanks to @TheDevKnight for his help in getting me up and going. I also borrowed config content from [here](https://github.com/EmurgoVN/cardano_docker).
+This project will build a 1.3.x Cardano Node and Wallet running within a docker container on Ubuntu. 
 
 ## Requirements
 - Ubuntu - OSX did not work for me ;(
@@ -21,7 +21,7 @@ $ mkdir data && chmod 777 data
 ## Building Image
 
 ```
-$ git clone https://github.com/cipherzzz/cardano-node
+$ git clone https://github.com/alphapoint/cardano-node
 
 $ cd cardano-node
 
@@ -31,14 +31,14 @@ $ docker build -t cardano-node .
 
 ###  Updating an Image
 ```
-# Login to docker hub
-$ docker login
+# Login to ap docker
+$ docker login devopsdockerreg.azurecr.io
 
 # Tag the local build with a remote tag
-$ docker tag cardano-node cipherz/cardano-node
+$ docker tag cardano-node devopsdockerreg.azurecr.io/cardano-node
 
 # Push the new tag to the remote
-$ docker push cipherz/cardano-node
+$ docker push devopsdockerreg.azurecr.io/cardano-node
 ```
 
 ***
@@ -47,7 +47,7 @@ $ docker push cipherz/cardano-node
 
 ```
 # Pull the remote built image
-$ docker pull cipherz/cardano-node
+$ docker pull devopsdockerreg.azurecr.io/cardano-node
 ```
 
 ***
